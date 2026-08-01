@@ -395,7 +395,7 @@ Write the NEXT {batch_size} turns. Speakers STRICTLY alternate starting with {cu
 
 {intro_instruction}Each turn: 3-4 SHORT sentences (6-10 words each) with PERIODS for natural TTS pauses. 20-30 seconds spoken.
 Simple present tense. A2 vocabulary. Natural French. NO filler sounds.
-IMPORTANT: Highlight exactly 1 key A2 target vocabulary word in each turn's French text using double asterisks, for example: "Wir schauen in die **Zukunft**."
+IMPORTANT: Highlight exactly 1 key A2 target vocabulary word in each turn's French text using double asterisks, for example: "Regardons vers le **futur**."
 
 Return EXACTLY {batch_size} turns as a JSON array (no markdown):
 [{{"speaker": "{current_host}", "french": "...", "english": "..."}},
@@ -406,7 +406,7 @@ Return EXACTLY {batch_size} turns as a JSON array (no markdown):
             resp = requests.post("https://gen.pollinations.ai/v1/chat/completions", json={
                 "model": AI_MODEL,
                 "messages": [
-                    {"role": "system", "content": "You write natural A2-level French podcast scripts with VERY clear punctuation. Every sentence must have at least 2 commas for natural TTS pauses. Sophie and Thomas strictly alternate. Highlight 1 key target word per turn in double asterisks like **Wort**. No filler sounds."},
+                    {"role": "system", "content": "You write natural A2-level French podcast scripts with VERY clear punctuation. Every sentence must have at least 2 commas for natural TTS pauses. Sophie and Thomas strictly alternate. Highlight 1 key target word per turn in double asterisks like **mot**. No filler sounds."},
                     {"role": "user", "content": prompt}
                 ],
                 "temperature": 0.9
@@ -499,11 +499,11 @@ def generate_script():
 
     # Short 2-line intro: Thomas (Host2) first, then Sophie (Host1), then topic
     all_turns[0]["speaker"] = "Host2"
-    all_turns[0]["french"] = f"Hallo, ich bin Thomas. Willkommen bei Velocity French. Heute sprechen wir über {topic_es}."
+    all_turns[0]["french"] = f"Bonjour, je suis Thomas. Bienvenue à Velocity French. Aujourd'hui, on parle de. Willkommen bei Velocity French. Heute sprechen wir über {topic_es}."
     all_turns[0]["english"] = f"Hi, I'm Thomas. Welcome to Velocity French Podcast. Today we talk about {topic_en}."
     if len(all_turns) > 1:
         all_turns[1]["speaker"] = "Host1"
-        all_turns[1]["french"] = f"Danke, Thomas. Das heutige Thema ist sehr **interessant**. Los geht's."
+        all_turns[1]["french"] = f"Danke, Thomas. Das heutige Thema est très **intéressant**. Los geht's."
         all_turns[1]["english"] = f"Thanks, Thomas. Today's topic is very interesting. Let's start."
 
     print(f"  Script: {len(all_turns)} turns, topic: {topic_es}")
@@ -515,9 +515,9 @@ def _fallback_script(topic_es, topic_en):
     for i in range(150):
         s = "Host2" if i % 2 == 0 else "Host1"
         if s == "Host2":
-            turns.append({"speaker": s, "french": f"Hallo, ich bin Thomas. Sprechen wir über die **Zukunft** und über {topic_es}.", "english": f"Hi, I'm Thomas. Let's talk about the future and {topic_en}."})
+            turns.append({"speaker": s, "french": f"Bonjour, je suis Thomas. Bienvenue à Velocity French. Aujourd'hui, on parle de. Bienvenue à Velocity French. Aujourd'hui, on parle de {topic_es}.", "english": f"Hi, I'm Thomas. Let's talk about the future and {topic_en}."})
         else:
-            turns.append({"speaker": s, "french": f"Gute Idee Thomas. {topic_es} ist sehr **interessant**.", "english": f"Good idea Thomas. {topic_en} is very interesting."})
+            turns.append({"speaker": s, "french": f"Bonne idée, Thomas. {topic_es} est très **intéressant**.", "english": f"Good idea Thomas. {topic_en} is very interesting."})
     return turns
 
 
