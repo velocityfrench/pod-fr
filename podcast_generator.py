@@ -499,11 +499,11 @@ def generate_script():
 
     # Short 2-line intro: Thomas (Host2) first, then Sophie (Host1), then topic
     all_turns[0]["speaker"] = "Host2"
-    all_turns[0]["french"] = f"Bonjour, je suis Thomas. Bienvenue à Velocity French. Aujourd'hui, on parle de. Willkommen bei Velocity French. Heute sprechen wir über {topic_es}."
+    all_turns[0]["french"] = f"Bonjour, je suis Thomas. Bienvenue à Velocity French. Aujourd'hui, on parle de {topic_es}."
     all_turns[0]["english"] = f"Hi, I'm Thomas. Welcome to Velocity French Podcast. Today we talk about {topic_en}."
     if len(all_turns) > 1:
         all_turns[1]["speaker"] = "Host1"
-        all_turns[1]["french"] = f"Danke, Thomas. Das heutige Thema est très **intéressant**. Los geht's."
+        all_turns[1]["french"] = f"Merci, Thomas. Le sujet d'aujourd'hui est très **intéressant**. Commençons."
         all_turns[1]["english"] = f"Thanks, Thomas. Today's topic is very interesting. Let's start."
 
     print(f"  Script: {len(all_turns)} turns, topic: {topic_es}")
