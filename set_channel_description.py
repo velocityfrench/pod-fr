@@ -11,7 +11,7 @@ from googleapiclient.discovery import build
 
 load_dotenv()
 
-CHANNEL_DESCRIPTION = "🎙️ Velocity French Podcast - Apprenez le français naturellement - avec notre podcast bilingue.\n\nLearn French naturally - with our bilingual podcast.\n\nBienvenidos al podcast bilingüe. Cada episodio es una conversación sencilla entre Sophie et Thomas, a nivel A2.\n\n📚 WHAT YOU'LL GET:\n• Daily bilingual conversations\n• Natural pronunciation from native speakers\n• Practical vocabulary for everyday life\n• Short, easy-to-follow episodes\n\n🇪🇸 How to use this podcast:\n1. Écoutez en français et essayez de comprendre\n2. Vérifiez la traduction en anglais\n3. Répétez les phrases à voix haute\n4. Réécoutez demain - chaque jour devient plus facile!\n\n🔔 Subscribe and turn on notifications so you never miss a lesson.\n\n📅 New episodes every day!\n\n#LearnFrench #Podcast #Bilingual #LanguageLearning"
+CHANNEL_DESCRIPTION = "🎙️ Velocity French Podcast - Apprenez le français naturellement - avec notre podcast bilingue.\n\nLearn French naturally - with our bilingual podcast.\n\nBienvenue au podcast bilingue. Chaque épisode est une conversation simple entre Sophie et Thomas, au niveau A2.\n\n📚 WHAT YOU'LL GET:\n• Daily bilingual conversations\n• Natural pronunciation from native speakers\n• Practical vocabulary for everyday life\n• Short, easy-to-follow episodes\n\n🇫🇷 How to use this podcast:\n1. Écoutez en français et essayez de comprendre\n2. Vérifiez la traduction en anglais\n3. Répétez les phrases à voix haute\n4. Réécoutez demain - chaque jour devient plus facile!\n\n🔔 Subscribe and turn on notifications so you never miss a lesson.\n\n📅 New episodes every day!\n\n#LearnFrench #Podcast #Bilingual #LanguageLearning"
 
 
 def _get_creds():
