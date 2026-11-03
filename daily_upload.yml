@@ -34,7 +34,7 @@ jobs:
       - name: Create .env
         run: |
           echo "POLLINATIONS_API_KEY=${{ secrets.POLLINATIONS_API_KEY }}" >> .env
-          echo "AI_MODEL=${{ secrets.AI_MODEL || 'openai' }}" >> .env
+          echo "AI_MODEL=${{ secrets.AI_MODEL || 'openai/gpt-5.4-nano' }}" >> .env
           echo "YT_CLIENT_ID=${{ secrets.YT_CLIENT_ID }}" >> .env
           echo "YT_CLIENT_SECRET=${{ secrets.YT_CLIENT_SECRET }}" >> .env
           echo "YT_REFRESH_TOKEN=${{ secrets.YT_REFRESH_TOKEN }}" >> .env
